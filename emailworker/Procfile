@@ -1,0 +1,1 @@
+web: celery -A emailworker worker --loglevel=info & python manage.py migrate && gunicorn emailworker.wsgi  --bind 0.0.0.0:$PORT
